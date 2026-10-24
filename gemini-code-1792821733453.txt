@@ -1,0 +1,37 @@
+Sila bina satu aplikasi web HTML tunggal yang mengandungi CSS dan JavaScript terbenam menggunakan Three.js untuk permainan 3D Maze Adventure bernama "The Wardrobe Adventure: Get Dressed!".
+
+SPESIFIKASI TEKNIKAL & STRUKTUR:
+
+1. ASAS DUNIA 3D & MAZE:
+   - Cipta ruang maze 3D bersaiz kecil/sederhana menggunakan geometri ringkas (BoxGeometry/PlaneGeometry) dengan warna yang terang dan mesra kanak-kanak.
+   - Sediakan pencahayaan asas (AmbientLight & DirectionalLight) yang cerah.
+   - Pastikan lantai, dinding maze, dan pintu/akses mempunyai visual yang jelas.
+
+2. WATAK & KAMERA (THIRD-PERSON):
+   - Bina watak pemain menggunakan blok geometri asli (cth: gabungan kubus ringkas untuk badan/kepala/kaki).
+   - Tetapkan kamera orang ketiga (Third-person camera) yang berada di belakang dan sedikit di atas watak, mengekori pergerakan watak secara halus.
+
+3. KAWALAN DUA PERANTI (KOMPUTER & TELEFON):
+   - Komputer: Pergerakan watak menggunakan kekunci WASD atau Anak Panah. Kawalan pandangan kamera dengan menyeret tetikus (mouse drag).
+   - Telefon / Skrin Sentuh: Sediakan On-Screen Touch Joystick di sebelah kiri bawah untuk pergerakan, dan kawasan kawalan kamera sentuh di sebelah kanan skrin.
+   - Cegah perlakuan 'scroll' tidak sengaja pada peranti mudah alih (touch-action: none).
+   - Sediakan butang interaksi fizikal UI pada skrin (contoh: Butang 'ACTION' atau 'INTERACT') yang mudah ditekan pada telefon mahupun komputer.
+
+4. FIZIK, COLLISION & NAVIGATION:
+   - Pelaksanaan sistem semakan perlanggaran (Collision Detection) asas supaya watak TIDAK BENTUR / MENEMBUSI dinding maze.
+   - Kamera tidak boleh menembusi dinding maze.
+   - Pergerakan watak mestilah lancar dan menggunakan 'delta time' yang dihadkan.
+   - Sediakan butang/mekanisme pemulihan 'Safety Checkpoint' sekiranya watak terperangkap atau keluar dari kawasan laluan.
+
+5. OBJEK INTERAKSI UJIAN (TEST OBJECT):
+   - Letakkan SATU (1) objek ujian 3D di dalam maze (contoh: Peti Harta 3D ringkas atau kiub bercahaya).
+   - Apabila watak mendekati objek ini dalam jarak munasabah (cth: < 2.5 unit), paparkan isyarat visual/prompt pada skrin (cth: "Tekan 'ACTION' untuk buka Peti Harta").
+   - Apabila butang interaksi ditekan, paparkan satu tetingkap Modal Dialog Ujian ringkas: "Objek Berjaya Diterokai! Prototaip interaksi berfungsi." dengan butang "Tutup".
+   - Bekukan pergerakan watak/kamera semasa dialog modal dibuka, dan lepaskan kawalan semula apabila modal ditutup.
+
+6. ANTARA MUKA (UI):
+   - Skrin Pengenalan / Overlay Mula dengan butang "Mula Main".
+   - Paparan Bantuan Kawalan ringkas di sudut skrin.
+   - Rekabentuk UI yang responsif untuk skrin mudah alih dan desktop.
+
+Hasilkan kod lengkap dalam SATU fail HTML sahaja yang sedia untuk dijalankan secara terus.
